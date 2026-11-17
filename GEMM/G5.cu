@@ -59,16 +59,6 @@ __global__ void gemm(const half* A, const half* B, half* C, int M, int N, int K,
             }
         }
     }
-    // for (int i = 0; i < TM; i++) {
-    //   if (cRow*BM+cr+i < M && cCol*BN+cc < N) {
-    //     int idx = N*(cr+i)+cc;
-    //     float temp = alpha*pdc[i];
-
-    //     if (beta != 0.0f) temp += beta*__half2float(C[idx]);
-
-    //     C[idx] = __float2half(temp);
-    //     }
-    // }
 }
 extern "C" void solve(const half* A, const half* B, half* C, int M, int N, int K, float alpha, float beta) {
     dim3 blocksPerGrid((N + BM - 1) / BM, (M + BN - 1) / BN), threadsPerBlock(BM * BN / (TM * TN));
