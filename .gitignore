@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+._*
+
+# 上传脚本的临时锁
+.github-upload.lock/
+
+# 本机密钥与环境变量
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python / 编辑器缓存
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+
+# CUDA / C++ 编译输出（保留算子源代码）
+/build/
+/cmake-build-*/
+*.o
+*.obj
+*.so
+*.dylib
+*.a
+*.cubin
+*.fatbin
+a.out
